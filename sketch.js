@@ -122,7 +122,7 @@ function adviceData(data){
 }
 
 
-//PAGES functions
+//--PAGES functions--\\
 function introPg() {
   background(0)
   textFont('Courier New')
@@ -139,7 +139,7 @@ function introPg() {
 
   textSize(10+txtMove*3)
 
-  text('\n\n\n\nConstellations have been named all throughout history and through many different cultures. Forty-eight constellations are known as "ancient," mostly coming from ancient Middle Eastern, Greek, and Roman cultures. These clusters of stars often represented gods, animals, or other objects from their stories. Currently, there are eighty-eight constellations officially recognized by the International Astronomical Union.\n\n\n\nClick the button to move to the next page and use color buttons to make constellations!', 100,300-txtMove*30,width-200,height-200+txtMove*10)
+  text('\n\nConstellations have been named all throughout history and through many different cultures. Forty-eight constellations are known as "ancient," mostly coming from ancient Middle Eastern, Greek, and Roman cultures. These clusters of stars often represented gods, animals, or other objects from their stories. Currently, there are eighty-eight constellations officially recognized by the International Astronomical Union.\n\n\n\nClick the button to move to the next page and use color buttons to make constellations!', 100,300-txtMove*30,width-200,height-200+txtMove*10)
   
 
 }
@@ -158,7 +158,7 @@ function interactPg() {
   if (constellation.length&&adviceInfo&&num>0){
     text(constellation[constellation.length - 1].length + ' stars:' + subInfo[1] + "\nColor's advice: "+adviceInfo.slip.advice, 20, height - 90, width - 20, height - 10)
     textAlign(LEFT)
-    text('Click anywhere to see the final result!',30,30)
+    text('Click the next page button to see the final result!',30,30)
 
 } else {
     text('0 stars',20, height - 60, width - 20,height - 10)
@@ -189,48 +189,21 @@ function interactPg() {
     const current=connection[connection.length-1][i]
     stroke(255,sin(frameCount*0.1) *20+205)
     strokeWeight(2)
-    // connection[connection.length-1][i].show()
     line(previous.x,previous.y,current.x,current.y)
-    // constellation[constellation.length-1].lineShow()
     }
-  // if (constellation[0]){
-  // for (let i = 0; i < constellation.length; i++) {
-  //   for (let j = 0; j < constellation[i].length; j++){
-  //     constellation[i][j].show()
-  //   }
-  // }
+
   for (let i=0; i<constellation[constellation.length-1].length;i++){
-    //constellation[constellation.length-1][i].glow()
     constellation[constellation.length-1][i].glow(sin(frameCount*0.1) *25+235)
     constellation[constellation.length-1][i].show()
-    // connection[connection.length-1][i].show()
     
-//constellation[constellation.length-1][i].glow()
-// console.log(constellation[constellation.length-1][i].glow())
-  // }
-  }
+
+    }
   }
 }
 
-
 function endPg() {
   background(0)
-  // let bgStars={
-  //   x: random(width),
-  //   y: random(height),
-  //   size:random(1,6)
 
-  // }
-
-   //frameRate(10)
-  // let starsArr=[]
-  // // if(frameCount%65==0){
-  // for (let i=0;i<25;i++){
-  //   if(frameCount%5==0){
-  //   starsArr[i]=new Galaxy(random(width),random(height),random(1,6))
-  //   starsArr[i].show()
-  //  }
-  // }
   push()
 
   translate(width / 2, height / 2)
@@ -266,8 +239,7 @@ function endPg() {
   pop()
 }
 
-
-
+//--organize for PAGES--\\
 function draw() {
 
   if (currentString&&currentString.length>0){
@@ -327,32 +299,28 @@ function draw() {
   }
 }
 
-//FADING TONES (w/ setTimeout)
+//--FADING TONES (w/ setTimeout)--\\
 function fadePink(){
   pinkTone.amp(0,2)
 }
-
 function fadeOrange(){
   orangeTone.amp(0,2)
 
 }
-
 function fadeTeal(){
   tealTone.amp(0,2)
 
 }
-
 function fadeBlue(){
   blueTone.amp(0,2)
 
 }
-
 function fadePurple(){
   purpleTone.amp(0,2)
 
 }
 
-//MAKING CONSTELLATIONS
+//--MAKING CONSTELLATIONS--\\
 function buttons() {
   if (currentString&&currentString.length>0){
     if (pages == 1) {
