@@ -54,9 +54,7 @@ function setup() {
   loadStrings(numAPI, numData)
   loadJSON(adviceAPI, adviceData)
 
-  // setInterval(makeGalaxy,500)
   noCursor()
-  //setInterval(backgroundStar,2000)
 
   serial=new p5.SerialPort()
   serial.open("/dev/tty.usbmodem1101")
